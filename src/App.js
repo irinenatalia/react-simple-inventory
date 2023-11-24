@@ -48,7 +48,8 @@ function App() {
       let parsedFormData = JSON.parse(formData)
       setProducts([
         ...products,
-        { productName: parsedFormData.productName,
+        { id: products.length+1,
+          productName: parsedFormData.productName,
           menuCode: parsedFormData.menuCode,
           category: parsedFormData.category,
           aboutProduct: parsedFormData.aboutProduct,
@@ -106,7 +107,7 @@ function App() {
 
         <section className="product-wrapper flex">
           {filteredProducts.map(p => (
-              <div key={p.menuCode} className="product-item">
+              <div key={p.id} className="product-item">
                 <div>
                   <span className={p.discountPrice>0? 'strikethrough' : ''}>{parseInt(p.price).toLocaleString()} NT&nbsp;</span>
                   <span className="p-discount">{p.discountPrice>0? parseInt(p.discountPrice).toLocaleString() + ' NT' : ''}</span>

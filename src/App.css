@@ -248,7 +248,8 @@ footer .next{
     right: 16px;
   }
   .add-product, .product-item{
-    width: calc(100%/2 - 8px);
+    width: calc(100%/2 - 10px);
+    box-sizing: border-box;
   }
   footer{
     flex-direction: column;
